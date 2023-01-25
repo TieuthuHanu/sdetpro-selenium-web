@@ -7,4 +7,5 @@ public interface Urls {
     String hoversSlug = "/hovers";
     String iFrameSlug = "/iframe";
     String jsAlertsSlug = "/javascript_alerts";
+    String formAuthenSlug = "/login";
 }
