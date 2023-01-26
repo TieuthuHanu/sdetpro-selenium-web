@@ -5,7 +5,7 @@ import org.openqa.selenium.*;
 import url.Urls;
 
 
-public class JSExecutor implements Urls {
+public class JsExecutor implements Urls {
 
     public static void main(String[] args) {
         WebDriver driver = DriverFactory.getChromeDriver();
