@@ -15,7 +15,12 @@ public class FeaturedProductTest {
 
     public static void main(String[] args) {
         WebDriver driver = DriverFactory.getChromeDriver();
-        testFeaturedProductHomePage(driver);
+        try {
+            testFeaturedProductHomePage(driver);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         driver.quit();
     }
 
