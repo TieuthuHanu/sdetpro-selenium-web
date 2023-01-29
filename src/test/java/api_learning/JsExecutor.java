@@ -2,10 +2,10 @@ package api_learning;
 
 import driver.DriverFactory;
 import org.openqa.selenium.*;
-import url.Urls;
+import url.UrlsTheInternet;
 
 
-public class JsExecutor implements Urls {
+public class JsExecutor implements UrlsTheInternet {
 
     public static void main(String[] args) {
         WebDriver driver = DriverFactory.getChromeDriver();

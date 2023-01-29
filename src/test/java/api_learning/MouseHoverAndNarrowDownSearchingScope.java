@@ -5,12 +5,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import url.Urls;
+import url.UrlsTheInternet;
 
 import java.util.List;
 
 
-public class MouseHoverAndNarrowDownSearchingScope implements Urls {
+public class MouseHoverAndNarrowDownSearchingScope implements UrlsTheInternet {
 
     private final static By figureSel = By.className("figure");
     private final static By profileNameSel = By.cssSelector(".figcaption h5");

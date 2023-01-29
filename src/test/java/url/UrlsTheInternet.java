@@ -1,6 +1,6 @@
 package url;
 
-public interface Urls {
+public interface UrlsTheInternet {
 
     String baseUrl = "https://the-internet.herokuapp.com";
     String dropdownSlug = "/dropdown";

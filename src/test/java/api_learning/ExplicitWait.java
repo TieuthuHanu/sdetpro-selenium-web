@@ -3,15 +3,13 @@ package api_learning;
 import driver.DriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import support.ui.WaitMoreThanOneTab;
-import url.Urls;
+import url.UrlsTheInternet;
 
 import java.time.Duration;
 
-public class ExplicitWait implements Urls {
+public class ExplicitWait implements UrlsTheInternet {
 
     public static void main(String[] args) {
         // Get a chrome session

@@ -5,10 +5,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import support.ui.SelectExt;
-import url.Urls;
+import url.UrlsTheInternet;
 
 
-public class Dropdown implements Urls {
+public class Dropdown implements UrlsTheInternet {
 
     public static void main(String[] args) {
         WebDriver driver = DriverFactory.getChromeDriver();

@@ -4,10 +4,10 @@ import driver.DriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import url.Urls;
+import url.UrlsTheInternet;
 
 
-public class IFrame implements Urls {
+public class IFrame implements UrlsTheInternet {
 
     public static void main(String[] args) {
         WebDriver driver = DriverFactory.getChromeDriver();

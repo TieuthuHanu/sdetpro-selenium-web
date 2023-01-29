@@ -7,11 +7,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import url.Urls;
+import url.UrlsTheInternet;
 
 import java.time.Duration;
 
-public class JsAlerts implements Urls {
+public class JsAlerts implements UrlsTheInternet {
 
     private final static By jsAlertSel = By.cssSelector("[onclick=\"jsAlert()\"]");
     private final static By jsConfirmSel = By.cssSelector("[onclick=\"jsConfirm()\"]");

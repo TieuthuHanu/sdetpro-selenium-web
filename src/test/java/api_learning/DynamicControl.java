@@ -6,14 +6,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import support.ui.SelectExt;
 import support.ui.WaitUntilElementEnabled;
-import url.Urls;
+import url.UrlsTheInternet;
 
 import java.time.Duration;
 
 
-public class DynamicControl implements Urls {
+public class DynamicControl implements UrlsTheInternet {
 
     public static void main(String[] args) {
         WebDriver driver = DriverFactory.getChromeDriver();
