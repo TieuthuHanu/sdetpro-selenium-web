@@ -39,7 +39,7 @@ public class FooterTest {
         softAssert.assertEquals(true, true);
         softAssert.assertEquals(3, 2);
 
-        softAssert.assertAll();
+        softAssert.assertAll(); // won't print Hello
 
         System.out.println("Hello");
     }
