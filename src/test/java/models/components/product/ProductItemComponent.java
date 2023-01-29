@@ -9,7 +9,7 @@ import org.openqa.selenium.WebElement;
 @ComponentCssSelector(value = ".product-item")
 public class ProductItemComponent extends Component {
 
-    private static final By productTitleSel = By.cssSelector(".product-title");
+    private static final By productTitleSel = By.cssSelector(".product-title a");
     private static final By productLinkSel = By.tagName("a");
 
     public ProductItemComponent(WebDriver driver, WebElement component) {

@@ -31,6 +31,7 @@ public class FeaturedProductTest {
 
         productItemComps.forEach(productItemComp -> {
             System.out.println(productItemComp.productTitleElem().getText());
+            System.out.println(productItemComp.productTitleElem().getAttribute("href"));
             System.out.println(productItemComp.productLinkElem().getAttribute("href"));
         });
     }

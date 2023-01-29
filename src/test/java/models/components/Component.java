@@ -39,14 +39,14 @@ public class Component {
     public <T extends Component> List<T> findComponents(Class<T> componentClass, WebDriver driver) {
 
         // Get Component
-        String cssSelector;
+        By selector;
         try {
-            cssSelector = componentClass.getAnnotation(ComponentCssSelector.class).value();
+            selector = getCompSelector(componentClass);
         } catch (Exception e) {
-            throw new IllegalArgumentException("[ERR] Component must have CSS selectoe!");
+            throw new IllegalArgumentException("[ERR] Component must be 1in8 selectors!");
         }
-        wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector(cssSelector)));
-        List<WebElement> results = component.findElements(By.cssSelector(cssSelector));
+        wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(selector));
+        List<WebElement> results = component.findElements(selector);
 
         // Define component class constructor params
         Class<?>[] params = new Class[]{WebDriver.class, WebElement.class};
@@ -55,7 +55,7 @@ public class Component {
             constructor = componentClass.getConstructor(params);
         } catch (Exception e) {
             throw new IllegalArgumentException(
-                    "[ERR] Component must have constructor with oarams " + Arrays.toString(params));
+                    "[ERR] Component must have constructor with params " + Arrays.toString(params));
         }
 
         // Convert all elements to components
@@ -69,5 +69,15 @@ public class Component {
         }).collect(Collectors.toList());
 
         return components;
+    }
+
+    // Define which selector is using
+    private By getCompSelector(Class<? extends Component> componentClass) {
+        if (componentClass.isAnnotationPresent(ComponentCssSelector.class))
+            return By.cssSelector(componentClass.getAnnotation(ComponentCssSelector.class).value());
+        else if (componentClass.isAnnotationPresent(ComponentXpathSelector.class))
+            return By.xpath(componentClass.getAnnotation(ComponentXpathSelector.class).value());
+        else
+            throw new IllegalArgumentException("[ERR] Selector is not valid!");
     }
 }
