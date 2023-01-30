@@ -4,7 +4,7 @@ import models.components.global.footer.FooterColumnComponent;
 import models.components.global.footer.FooterComponent;
 import models.components.global.header.TopMenuComponent;
 import static models.components.global.header.TopMenuComponent.MainCatItem;
-import static models.components.global.header.TopMenuComponent.CatItemComponent;
+import static models.components.global.header.TopMenuComponent.SublistComponent;
 import models.pages.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -86,14 +86,14 @@ public class FooterTestFlow {
         String randomCatHref = randomMainItemElem.catItemLinkElem().getAttribute("href");
 
         // Get sublist
-        List<CatItemComponent> catItemComps = randomMainItemElem.catItemComps();
-        if (catItemComps.isEmpty())
+        List<SublistComponent> sublistComps = randomMainItemElem.sublistComps();
+        if (sublistComps.isEmpty())
             randomMainItemElem.catItemLinkElem().click();
         else {
-            int randomIndex = new SecureRandom().nextInt(catItemComps.size());
-            CatItemComponent randomCalItemComp = catItemComps.get(randomIndex);
-            randomCatHref = randomCalItemComp.getComponent().getAttribute("href");
-            randomCalItemComp.getComponent().click();
+            int randomIndex = new SecureRandom().nextInt(sublistComps.size());
+            SublistComponent randomCatItemComp = sublistComps.get(randomIndex);
+            randomCatHref = randomCatItemComp.getComponent().getAttribute("href");
+            randomCatItemComp.getComponent().click();
         }
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
